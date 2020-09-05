@@ -36,7 +36,7 @@ EXPR_EMOJI = (
 
 @on_command('lunch')
 async def lunch(session: CommandSession):
-    where = ['去一食堂', '去二食堂', '吃日夜', '点外卖', '出去吃']
+    where = ['去桃园食堂', '去荟园食堂', '吃日夜', '点外卖', '出去吃']
     kind = ['面条', '饭', '炒饭', '早点', '砂锅']
 
     request_answer_filters = [

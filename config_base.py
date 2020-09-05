@@ -15,7 +15,8 @@ SESSION_CANCEL_EXPRESSION = (
     '好吧，那nana酱就不打扰啦',
     '那nana酱先不打扰小主人啦',
 )
-
+#当有命令会话正在运行时，给用户新消息的回复。
+SESSION_RUNNING_EXPRESSION = 'nana酱还在思考中，等一下行嘛'
 # 数据文件夹
 DATA_FOLDER = path.join(path.dirname(__file__), 'data')
 
