@@ -35,7 +35,7 @@ AIOCACHE_DEFAULT_CONFIG = {
 }
 
 # 使用手册图片地址
-MANUAL_IMAGE_URL_FORMAT = 'https://raw.githubusercontent.com/a147022899/nana/master/manual/screenshots/{}.png'
+MANUAL_IMAGE_URL_FORMAT = 'https://raw.githubusercontent.com/sdy623/nana/master/manual/screenshots/{}.png'
 #MANUAL_IMAGE_URL_FORMAT = 'https://gitee.com/vantdn/nana/raw/master/manual/screenshots/{}.png'#国内地址
 # 允许和炸毛互动的群
 GROUPS_TO_PLAY_WITH_ZHAMAO = []
