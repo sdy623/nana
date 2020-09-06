@@ -54,7 +54,7 @@ async def setu(session: CommandSession):
     user = session.event.user_id
     group = session.event.group_id
     if checkNoob(user, group):
-        if 0 <= now_time() < 5.5:
+        if 0 <= now_time() < 1:
             await session.send(
                 choice(
                     [
