@@ -40,7 +40,7 @@ async def send_red_packet(session: CommandSession):
         else:
             RED_PACKET['red_packet'] += coins_num  # 将局部的金币数量储存在全局变量中
             data[ctx_id]['wealth'] -= RED_PACKET['red_packet']  # 发起红包的用户减去等量的金币
-            await session.send('稍等一下哦，奶茶正在准备把你的红包发送出去……')
+            await session.send('稍等一下哦，nana正在准备把你的红包发送出去……')
             await session.send('总额为' + str(RED_PACKET['red_packet'])
                                + '个金币的虚拟红包已经成功发出，发送“抢红包”即可开抢，祝大家财运滚滚来哟~')
 

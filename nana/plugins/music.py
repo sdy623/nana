@@ -43,7 +43,7 @@ async def music(session: CommandSession):
             session.bot.config.GROUPS_TO_PLAY_WITH_ZHAMAO and \
             not session.state.get('from_nlp'):
         ts = int(time.time() / 30)
-        if ts % 2 == 1:  # 奇数炸毛发，奶茶附和
+        if ts % 2 == 1:  # 奇数炸毛发，nana附和
             await asyncio.sleep(2)
             session.finish('炸毛哥哥已经回复你啦～')
 

@@ -15,8 +15,7 @@ SESSION_CANCEL_EXPRESSION = (
     '好吧，那nana酱就不打扰啦',
     '那nana酱先不打扰小主人啦',
 )
-#当有命令会话正在运行时，给用户新消息的回复。
-SESSION_RUNNING_EXPRESSION = 'nana酱还在思考中，等一下行嘛'
+
 # 数据文件夹
 DATA_FOLDER = path.join(path.dirname(__file__), 'data')
 
@@ -35,7 +34,7 @@ AIOCACHE_DEFAULT_CONFIG = {
 }
 
 # 使用手册图片地址
-#MANUAL_IMAGE_URL_FORMAT = 'https://raw.githubusercontent.com/sdy623/nana/master/manual/screenshots/{}.png'
+#MANUAL_IMAGE_URL_FORMAT = 'https://raw.githubusercontent.com/sdy623/nana/master/manual/screenshots/{}.png' #国际地址
 MANUAL_IMAGE_URL_FORMAT = 'https://gitee.com/vantdn/nana/raw/master/manual/screenshots/{}.png'#国内地址
 # 允许和炸毛互动的群
 GROUPS_TO_PLAY_WITH_ZHAMAO = []
@@ -50,6 +49,9 @@ LTP_CLOUD_API_KEY = ''
 
 # 图灵机器人
 TULING_API_KEY = ''
+
+# API url:https://api.lolicon.app/#/setu
+LOLICONAPI = "" # key
 
 # 和风天气
 HEWEATHER_KEY = ''
