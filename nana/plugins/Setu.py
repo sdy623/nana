@@ -46,7 +46,7 @@ def now_time():
 
 #aliases = (r"来[点丶张份副个幅][涩色瑟][图圖]|[涩色瑟][图圖]来|[涩色瑟][图圖][gkd|GKD|搞快点]|[gkd|GKD|搞快点][涩色瑟][图圖]|[图圖]来|[我你她他它]想要[点丶张份副][涩色瑟][图圖]|我想要[1一][张份幅副个只][涩色瑟][图圖]|[我你她他它]想[看|look][涩涩|色色]的东西"),
 
-setu_type = 1
+setu_type = 2
 @on_command('setu', aliases=['色图', '涩图', '图圖', *KEYWORDS],
             only_to_me=False)
 async def setu(session: CommandSession):
