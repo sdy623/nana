@@ -5,13 +5,13 @@ import requests
 from pathlib import Path
 
 
-path_temp_img = Path('.') / 'ATRI' / 'data' / 'temp' / 'img'
+path_temp_img = Path('.') / 'nana' / 'data' / 'temp' / 'img'
 
 
 def b64_str_img_url(url: str):
     img_d = requests.get(url)
     name = 'temp.jpg'
-    find_img = Path('.') / 'ATRI' / 'data' / 'temp' / 'img' / f'{name}'
+    find_img = Path('.') / 'nana' / 'data' / 'temp' / 'img' / f'{name}'
     with open(find_img, 'wb') as f:
         f.write(img_d.content)
     if find_img.stat().st_size >= 1000000:
