@@ -39,6 +39,9 @@ MANUAL_IMAGE_URL_FORMAT = 'https://gitee.com/vantdn/nana/raw/master/manual/scree
 # 允许和炸毛互动的群
 GROUPS_TO_PLAY_WITH_ZHAMAO = []
 
+# API url:https://saucenao.com/search.php
+SAUCENAO_KEY = ''
+
 # 百度 AIP
 BAIDU_AIP_APP_ID = ''
 BAIDU_AIP_API_KEY = ''
@@ -59,10 +62,12 @@ HEWEATHER_KEY = ''
 # 聚合数据
 JUHE_JOKE_API_KEY = ''  # 笑话大全
 JUHE_IDIOM_API_KEY = ''  # 成语词典
+
 #腾讯api
 APP_ID = ''
 APP_KEY = ''
 BAYES = True
+
 # Bool类
 CONFIGURATION_WIZARD: bool = True # 设置每次运行时是否需要确认运行配置向导
 XDEBUG: bool = True # 日志是否输出DEBUG

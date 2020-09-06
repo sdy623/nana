@@ -4,7 +4,7 @@ from typing import Optional
 
 
 def checkSwitch(funcName: str):
-    file = Path('.') / 'ATRI' / 'plugins' / 'switch' / 'switch.json'
+    file = Path('.') / 'nana' / 'plugins' / 'switch' / 'switch.json'
     with open(file, 'r') as f:
         data = json.load(f)
     
@@ -12,8 +12,8 @@ def checkSwitch(funcName: str):
         return True
 
 def checkNoob(user: int, group: Optional[int] = None):
-    fileU = Path('.') / 'ATRI' / 'plugins' / 'noobList' / 'noobList.json'
-    fileG = Path('.') / 'ATRI' / 'plugins' / 'noobList' / 'noobGroup.json'
+    fileU = Path('.') / 'nana' / 'plugins' / 'noobList' / 'noobList.json'
+    fileG = Path('.') / 'nana' / 'plugins' / 'noobList' / 'noobGroup.json'
     try:
         with open(fileU, 'r') as f:
             dataU = json.load(f)
