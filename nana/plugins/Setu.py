@@ -16,7 +16,7 @@ import config # type: ignore
 from nana.modules.b64 import b64_str_img_url # type: ignore
 from nana.modules.response import request_api_params # type: ignore
 from nana.modules.funcControl import checkSwitch, checkNoob # type: ignore
-
+from nonebot import on_natural_language, NLPSession, IntentCommand
 
 bot = nonebot.get_bot()
 master = bot.config.SUPERUSERS
@@ -35,6 +35,7 @@ Pid: {pid}
 ---------------
 Complete time:{time}s"""
 
+KEYWORDS = ['涩色瑟', '搞快点', '色色', '涩涩', '瑟瑟', '福利', 'boki','色图','涩图']
 
 def now_time():
     now_ = datetime.now()
@@ -43,9 +44,11 @@ def now_time():
     now = hour + minute / 60
     return now
 
+#aliases = (r"来[点丶张份副个幅][涩色瑟][图圖]|[涩色瑟][图圖]来|[涩色瑟][图圖][gkd|GKD|搞快点]|[gkd|GKD|搞快点][涩色瑟][图圖]|[图圖]来|[我你她他它]想要[点丶张份副][涩色瑟][图圖]|我想要[1一][张份幅副个只][涩色瑟][图圖]|[我你她他它]想[看|look][涩涩|色色]的东西"),
 
 setu_type = 1
-@on_command('setu', patterns = (r"来[点丶张份副个幅][涩色瑟][图圖]|[涩色瑟][图圖]来|[涩色瑟][图圖][gkd|GKD|搞快点]|[gkd|GKD|搞快点][涩色瑟][图圖]|[图圖]来|[我你她他它]想要[点丶张份副][涩色瑟][图圖]|我想要[1一][张份幅副个只][涩色瑟][图圖]|[我你她他它]想[看|look][涩涩|色色]的东西"), only_to_me = False)
+@on_command('setu', aliases=['色图', '涩图', '图圖', *KEYWORDS],
+            only_to_me=False)
 async def setu(session: CommandSession):
     start = time.perf_counter()
     user = session.event.user_id
@@ -315,3 +318,7 @@ async def _(context):
             
             else:
                 pass
+@on_natural_language(KEYWORDS)
+async def _(session: NLPSession):
+    miss = max(0, len(session.msg_text) - 4) * 5
+    return IntentCommand(100.0 - miss, 'setu')
