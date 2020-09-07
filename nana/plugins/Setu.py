@@ -54,7 +54,7 @@ async def setu(session: CommandSession):
     user = session.event.user_id
     group = session.event.group_id
     if checkNoob(user, group):
-        if 0 <= now_time() < 1:
+        if 0 <= now_time() < 5:
             await session.send(
                 choice(
                     [
@@ -182,7 +182,7 @@ async def _(session: CommandSession):
         
         await session.send('okay~~~~')
 
-
+'''
 @bot.on_message("group")
 async def _(context):
     start = time.perf_counter()
@@ -318,6 +318,7 @@ async def _(context):
             
             else:
                 pass
+'''
 @on_natural_language(KEYWORDS)
 async def _(session: NLPSession):
     miss = max(0, len(session.msg_text) - 4) * 5

@@ -3,7 +3,7 @@ import re
 from nonebot import CommandSession, CommandGroup
 from nonebot import on_natural_language, NLPSession, IntentCommand
 from nonebot.helpers import render_expression as expr
-
+from jieba import posseg
 from nana import nlp, logger
 from nana.command import allow_cancellation
 from nana.plugins.weather.data_source import get_weather
@@ -93,36 +93,24 @@ async def _(session: CommandSession):
         session.state[session.current_key] = striped_text_arg
 
 
-@on_natural_language({'天气'})
+@on_natural_language(keywords={'天气'})
 async def _(session: NLPSession):
-    text = re.sub(r'\s+', '', session.msg_text.strip())
-    if not text:
-        return
+    # 去掉消息首尾的空白符
+    stripped_msg = session.msg_text.strip()
+    # 对消息进行分词和词性标注
+    words = posseg.lcut(stripped_msg)
 
-    confidence = 70.0
+    city = None
+    # 遍历 posseg.lcut 返回的列表
+    for word in words:
+        # 每个元素是一个 pair 对象，包含 word 和 flag 两个属性，分别表示词和词性
+        if word.flag == 'ns':
+            # ns 词性表示地名
+            city = word.word
+            break
 
-    if re.match(r'(?:怎么|咋)样\S{0,5}$', text) or \
-            re.search(r'查(?:一?下|查看?)', text):
-        confidence += 10.0
-    if text.endswith('？') or text.endswith('?'):
-        confidence += 5.0
-
-    args = {}
-
-    seg_paragraphs = await nlp.lexer(text)
-    if seg_paragraphs:
-        words = seg_paragraphs[0]
-        for word in words:
-            if word['ne'] == 'LOC':
-                location = await nlp.parse_location(word['basic_words'])
-                if any((location.province, location.city, location.district)):
-                    args['location'] = location
-            elif word['ne'] == 'TIME':
-                args['time'] = word['item']
-
-    confidence += len(args) * 5 if args else 0.0
-    return IntentCommand(min(confidence, 100.0), ('weather', 'weather'),
-                         args=args)
+    # 返回意图命令，前两个参数必填，分别表示置信度和意图命令名
+    return IntentCommand(90.0, 'weather', current_arg=city or '')
 
 # @on_natural_language({'雨', '雪', '晴', '阴', '冰雹', '雾'})
 # async def _(session: NLPSession):
