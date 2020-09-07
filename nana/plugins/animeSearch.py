@@ -9,7 +9,7 @@ from nana.modules.funcControl import checkSwitch, checkNoob # type: ignore
 
 KEYWORDS=['搜番','搜动漫']
 
-__plugin_name__ = "anime_search"
+__plugin_name__ = "以图搜番"
 
 async def get_bytes(url, headers = None):
     async with ClientSession() as asyncSession:
@@ -59,7 +59,7 @@ def toSimpleString(str):
     return "".join(output_str_list)
 
 
-@on_command('anime_search', aliases = ['以图搜番',*KEYWORDS], only_to_me = False)
+@on_command('anime_search', aliases = ['以图搜番','用图找番','以图找番',*KEYWORDS], only_to_me = False)
 async def AnimeSearch(session: CommandSession):
     user = session.event.user_id
     group = session.event.group_id
