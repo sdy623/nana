@@ -9,7 +9,7 @@ from nana.modules.funcControl import checkSwitch, checkNoob # type: ignore
 
 KEYWORDS=['搜番','搜动漫']
 
-__plugin_name__ = "以图搜番"
+__plugin_name__ = "以图找番"
 
 async def get_bytes(url, headers = None):
     async with ClientSession() as asyncSession:
