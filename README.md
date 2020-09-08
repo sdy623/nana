@@ -1,10 +1,14 @@
 # nana
-
-nana 是 HZAU JPC 编写的一个基于 [NoneBot] 的一个功能型 QQ 机器人核心，具有常见的查询天气、订阅新闻、运行代码、智能聊天等功能。目前 nana 以机器人**日协のNANA酱**（QQ 号 `3091667837`）作为表现层。
+![](https://i.loli.net/2020/09/08/vaBkAsFSOjxdfb6.png)
+nana 是 HZAU JPC 编写的一个基于 [NoneBot] 的一个功能型 QQ 机器人核心，具有常见的查询天气、订阅新闻、以图找番、智能聊天等功能。目前 nana 以机器人**日协のNANA酱**（QQ 号 `3091667837`）作为表现层。
 
 [NoneBot]: https://github.com/richardchien/nonebot
 
 仍在编写中，现在功能还很不完善……
+
+[nana使用帮助]:manual/index.html
+
+### [nana使用帮助]
 
 ## 运行
 
