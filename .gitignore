@@ -196,5 +196,5 @@ data
 config_dev.py
 config.py
 prod
-alembic.ini
+#alembic.ini
 index.bak

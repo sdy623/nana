@@ -2,7 +2,7 @@ import os
 import sys
 import nana
 
-deployment_env = os.getenv('DEPLOYMENT_ENV', 'dev').lower()
+deployment_env = os.getenv('DEPLOYMENT_ENV', 'prod').lower()
 
 config = None
 if deployment_env in ('dev', 'development'):

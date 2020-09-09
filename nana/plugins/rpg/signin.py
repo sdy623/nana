@@ -17,7 +17,7 @@ async def _(session: CommandSession):
     today = dt.beijing_now().date()
     if account.last_sign_in_date and \
             today - account.last_sign_in_date < timedelta(days=1):
-        session.finish('你今天已经签过到啦\n明天再来吧～')
+        session.finish('签到系统正处于删档测试阶段。你今天已经签过到啦\n明天再来吧～')
 
     last_sign_in_date = today
     total_sign_in = account.total_sign_in + 1
