@@ -1,7 +1,15 @@
 import os
 import sys
 import nana
-
+import random
+import re
+import base64
+from dataclasses import dataclass
+from typing import Dict
+import requests
+import hashlib
+from io import BytesIO
+from PIL import Image
 deployment_env = os.getenv('DEPLOYMENT_ENV', 'prod').lower()
 
 config = None
@@ -42,3 +50,5 @@ app = bot.asgi
 
 if __name__ == '__main__':
     bot.run()
+    from nana import fuuki
+            
