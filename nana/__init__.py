@@ -1,12 +1,9 @@
 import logging
 from os import path
 from typing import Any
-
 import nonebot as nb
 from . import cache, db, scheduler
 from .log import logger
-
-
 def init(config_object: Any) -> nb.NoneBot:
     if config_object and \
             hasattr(config_object, 'APSCHEDULER_CONFIG') and \
@@ -38,3 +35,5 @@ def init(config_object: Any) -> nb.NoneBot:
                     'nana.plugins')
 
     return bot
+
+
