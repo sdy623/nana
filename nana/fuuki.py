@@ -58,7 +58,7 @@ def compress(file):
     return base64.b64encode(img_bin).decode('utf-8')
 
 
-@on_natural_language(only_to_me=False, permission=perm.GROUP)
+@on_natural_language(only_to_me=False)
 async def _(session: NLPSession):
     group_id = session.event.group_id
     user_id = session.event.user_id

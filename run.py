@@ -49,6 +49,4 @@ bot = nana.init(config)
 app = bot.asgi
 
 if __name__ == '__main__':
-    bot.run()
-    from nana import fuuki
-            
+    bot.run()            
