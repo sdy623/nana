@@ -199,3 +199,7 @@ config_prod.py
 prod
 #alembic.ini
 index.bak
+config_prod.py
+nana/plugins/shop/123231123.py
+nana/plugins/shop/db/maidaode_list
+nana/plugins/shop/db/shopping_car
